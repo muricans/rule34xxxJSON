@@ -1,0 +1,20 @@
+{
+  "name": "rule34xxx_api",
+  "version": "1.0.0",
+  "description": "Get information from posts from rule34.xxx",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rule34",
+    "json"
+  ],
+  "author": "Muricans",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "snekfetch": "^4.0.4",
+    "xml2json": "^0.11.2"
+  }
+}
