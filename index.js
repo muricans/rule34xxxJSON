@@ -8,8 +8,16 @@ app.use('/random', random);
 
 app.get('/', async (req, res) => {
     const info = await rule34(req);
+    if (info.error) {
+        res.status(404);
+    }
     res.send(info);
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`Listening on port: ${port}`));
+app.listen(port, () => {
+    console.log(`Listening on port: ${port}`);
+    setInterval(() => {
+        console.log('ping');
+    }, (60000 * 10));
+});
