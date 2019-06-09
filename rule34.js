@@ -24,11 +24,12 @@ function splitTags(tags) {
  */
 async function handle(req) {
     return new Promise(resolve => {
-        const tag = req.query.tags ? '&tags=' + req.query.tags : '';
-        const id = req.query.id ? '&id=' + req.query.id : '';
-        const limit = req.query.limit ? '&limit=' + req.query.limit : '';
-        const pid = req.query.pid ? '&pid=' + req.query.pid : '';
-        https.get('https://rule34.xxx/index.php?page=dapi&s=post&q=index' + tag + limit + pid + id, (resp) => {
+        let query = '';
+        query += req.query.tags ? '&tags=' + req.query.tags : '';
+        query += req.query.id ? '&id=' + req.query.id : '';
+        query += req.query.limit ? '&limit=' + req.query.limit : '';
+        query += req.query.pid ? '&pid=' + req.query.pid : '';
+        https.get('https://rule34.xxx/index.php?page=dapi&s=post&q=index' + query, (resp) => {
             const chunks = [];
             resp.on('data', (chunk) => {
                 chunks.push(chunk);
