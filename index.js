@@ -11,6 +11,7 @@ app.get('/', async (req, res) => {
     if (info.error) {
         res.status(404);
     }
+    res.send(info);
 });
 
 const port = process.env.PORT || 3000;
