@@ -3,7 +3,7 @@ Gets posts from rule34.xxx and converts them to json.
 
 ## Usage
 
-Use a GET method to recieve posts.
+Use a GET method to receive posts.
 
 To add tags use ?tags=tag+other_tag
 
